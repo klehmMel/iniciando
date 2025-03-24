@@ -36,7 +36,7 @@ this.tableHeader.appendChild(htmlHeader)
                 htmlRow.innerHTML += `<td> ${aluno.media[materia] !== undefined ? aluno.media[materia] : `<a href = "edit.html?id = ${aluno._id}"> Incluir nota </a>`} </td>`
             })
         } else {
-            htmlRow.innerHTML += `td colspan="${this.materias.length}">
+            htmlRow.innerHTML += `<td colspan="${this.materias.length}">
                 <a href="edit.html?id=${aluno._id}">
                     Incluir notas
                 <a/>

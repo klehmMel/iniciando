@@ -13,4 +13,15 @@ add (aluno) {
 update(aluno) {
     return aluno
 }
+
+searchById(id) {
+    return this.alunos.find(aluno => aluno._id === id)
+}
+
+
+
+
+
+
+
 }

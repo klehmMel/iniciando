@@ -39,7 +39,7 @@ const alunos = [
   })
   
   const alunoView = new AlunoView(document.querySelector('[data-table-alunos'))
-  const alunocontroller = new AlunoController(alunoService, alunoView)
+  const alunoController = new AlunoController(alunoService, alunoView)
 
   
 document.querySelector('form').addEventListener('submit', function (event){
