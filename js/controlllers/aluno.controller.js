@@ -1,3 +1,7 @@
 class Alunocontroller {
-    constructor (){}
+    constructor (service, view){
+        view.render(service.alunos
+            
+        )
+    }
 }
