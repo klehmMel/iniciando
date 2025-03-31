@@ -1,44 +1,18 @@
-const alunos = [
 
-  {
-  _id: 0,
-  nome: "chico melato",
-  notas: {
-  backend_1: [1, 8.5, 9, 6.5],
-  frontend_2: [2, 2, 2, 2],
-  bancodados: [2, 2, 3, 3],
-  ferramentas: [3, 3, 3, 3],
-  },
-  },
-  {
-  _id: 0,
-  nome: "fulano da silva",
-  notas: {
-  backend_1: [1, 8.5, 9, 6.5],
-  frontend_2: [2, 2, 2, 2],
-  bancodados: [2, 2, 3, 3],
-  ferramentas: [3, 3, 3, 3],
-  },
-  },
-  {
-  _id: 1,
-  nome: "talita lima",
-  notas: {
-  backend_1: [4, 4, 4, 4],
-  frontend_2: [4, 4, 5, 5],
-  bancodados: [5, 5, 6, 6],
-  ferramentas: [7, 7, 8, 9],
-  },
-  },
-  ];
-  
+  const materiaservice = new MateriaService()
+  let materias = materiaservice.getAll()
+  if(materias.length === 0) {
+    materiaservice.add(new MateriaModel({nome: 'Back-End 1'}))
+    materiaservice.add(new MateriaModel({nome: 'Front-End 1'}))
+    materiaservice.add(new MateriaModel({nome: 'Banco de Dados'}))
+    materiaservice.add(new MateriaModel({nome: 'Ferramentas Web'}))
+  }
+
   const alunoService = new AlunoService()
   
-  alunos.forEach(aluno => {
-  alunoService.add(new AlunoModel(aluno))
-  })
-  
-  const alunoView = new AlunoView(document.querySelector('[data-table-alunos'))
+  const alunoView = new AlunoView(document.querySelector('[data-table-alunos]'),
+  materiaservice.getAll()
+)
   const alunoController = new AlunoController(alunoService, alunoView)
 
   
